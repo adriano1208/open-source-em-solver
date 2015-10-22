@@ -1,0 +1,5 @@
+#!/bin/bash
+# Give xnecview and nec2c execution permissions
+
+chmod +x xnecview
+chmod +x nec2c

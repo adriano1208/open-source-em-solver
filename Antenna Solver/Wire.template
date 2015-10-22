@@ -1,0 +1,30 @@
+#Wire					<- Name of structure
+Frequency=100 			<- default frequency which can be replaced to populate the initial parameters before passing to Antenna.jav
+Ground=0				<- does this antenna need a ground? Activates a PEC ground if not already activated if it is true
+
+//Antenna Placement Parameters <- automatically handled when run
+V00:Position(x):0 		<- x component of vector antenna is moved from original location
+V01:Position(y):0
+V02:Position(z):0
+V03:Rotation(x):0 		<- rotation about x-axis
+V04:Rotation(y):0
+V05:Rotation(z):0 
+//Dipole Specific Parameters
+V06:Length:300/f
+//Advanced				<- advanced features a nub should not consider, should be expanded to accomodate power users
+V07:Wire radius:0.02  
+V08:Excitation[0=false,1=true]:0
+V09:Excitation position on wire[%]:0
+V10:Excitation Voltage [Re]:1
+V11:Excitation Voltage [Im]:0
+
+//Interpretation of above Parameters
+//EX:Type:Tag:Pos:Table:Real:Imag:Norm   (Type, Table and Norm set to 0 since not implemented)
+$$EX:   0:000:V09:    0:V8*V10:V8*V11:0
+
+//GW:Tag:X1:Y1:Z1:X2:Y2:Z3:radius
+$$GW:000: 0: 0: 0: 0: 0:V06:V07
+
+
+
+	
